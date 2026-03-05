@@ -42,3 +42,14 @@ background:#333;
 color:white;  
 border:1px solid #555;  
 }  
+#queryBox{
+padding:15px;
+background:#f0f0f0;
+margin-top:10px;
+word-break:break-all;
+border-radius:5px;
+}
+
+.dark #queryBox{
+background:#333;
+}

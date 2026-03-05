@@ -5,50 +5,107 @@ margin:0;
 }
 
 .container{
-max-width:900px;
+max-width:700px;
 margin:auto;
-padding:30px;
+padding:40px 20px;
 background:white;
 }
 
 .grid{
-display:grid;
-grid-direction:columns;
-gap:30p;
-
+display:flex;
+flex-direction:column;
+gap:15px;
 }
 
 h3{
-margin-top:20px;
+margin-top:25px;
 }
 
 label{
-display:block;
-margin-top:8px;
 font-size:14px;
 }
 
 input{
 width:100%;
 box-sizing:border-box;
+padding:10px;
+border:1px solid #ccc;
+border-radius:6px;
+}
+
+.buttons{
+display:flex;
+flex-direction:column;
+gap:10px;
+margin-top:20px;
 }
 
 button{
 background:#1d9bf0;
 color:white;
 border:none;
-padding:10px 15px;
+padding:10px;
 border-radius:20px;
-margin:5px;
 cursor:pointer;
 }
 
 #queryBox{
 padding:15px;
 background:#f0f0f0;
-margin-top:10px;
 border-radius:5px;
+margin-top:10px;
 word-break:break-all;
+}
+
+.checkboxRow{
+display:flex;
+gap:25px;
+margin-top:10px;
+flex-wrap:wrap;
+}
+
+.checkboxItem{
+display:flex;
+flex-direction:column;
+align-items:center;
+font-size:13px;
+}
+
+.checkboxItem input{
+margin-bottom:5px;
+}
+
+#history a{
+color:#1d9bf0;
+text-decoration:none;
+}
+
+.deleteBtn{
+margin-left:10px;
+background:#ff4d4d;
+border:none;
+color:white;
+padding:3px 8px;
+border-radius:5px;
+cursor:pointer;
+font-size:12px;
+}
+
+.topBar{
+position:fixed;
+top:10px;
+right:10px;
+z-index:1000;
+}
+
+#darkToggle{
+width:40px;
+height:40px;
+border-radius:50%;
+font-size:18px;
+background:#1d9bf0;
+color:white;
+border:none;
 }
 
 .dark{
@@ -70,168 +127,6 @@ border:1px solid #555;
 background:#333;
 }
 
-.checkboxRow{
-display:flex;
-gap:15px;
-margin-top:10px;
-}
-
-.checkboxRow label{
-display:flex;
-align-items:center;
-gap:5px;
-}
-
-/* 履歴リンク */
-#history a{
-color:#1d9bf0;
-text-decoration:none;
-}
-
-/* ダークモード履歴 */
 .dark #history a{
 color:white;
-}
-
-/* 削除ボタン */
-.deleteBtn{
-margin-left:10px;
-background:#ff4d4d;
-border:none;
-color:white;
-padding:3px 8px;
-border-radius:5px;
-cursor:pointer;
-font-size:12px;
-}
-/* スマホ対応 */
-
-@media (max-width:768px){
-
-.container{
-padding:15px;
-}
-
-.grid{
-grid-template-columns:1fr;
-gap:15px;
-}
-
-button{
-width:100%;
-margin-top:10px;
-}
-
-input{
-font-size:16px;
-}
-
-.checkboxRow{
-flex-wrap:wrap;
-}
-
-}
-.buttons{
-display:flex;
-flex-direction:column;
-gap:10px;
-margin-top:20px;
-}
-
-.buttons button{
-width:100%;
-}
-
-/* 入力幅修正 */
-
-input{
-width:100%;
-box-sizing:border-box;
-}
-
-
-/* チェックボックス */
-
-.checkboxRow{
-display:flex;
-flex-wrap:wrap;
-gap:15px;
-margin-top:10px;
-}
-
-.checkboxRow label{
-display:flex;
-align-items:center;
-gap:6px;
-font-size:14px;
-}
-
-
-/* ボタンレイアウト */
-
-.buttons{
-display:flex;
-flex-wrap:wrap;
-gap:10px;
-margin-top:20px;
-}
-
-.buttons button{
-flex:1;
-min-width:120px;
-}
-
-
-/* スマホ対応 */
-
-@media (max-width:768px){
-
-.grid{
-grid-template-columns:1fr;
-}
-
-.container{
-padding:15px;
-}
-
-input{
-font-size:16px;
-}
-
-.buttons{
-flex-direction:column;
-}
-
-.buttons button{
-width:100%;
-}
-
-#history li{
-display:block;
-}
-
-}
-.checkboxRow{
-display:flex;
-gap:25px;
-margin-top:10px;
-}
-
-.checkboxItem{
-display:flex;
-flex-direction:column;
-align-items:center;
-font-size:13px;
-}
-
-.checkboxItem input{
-margin-bottom:5px;
-}
-
-.checkboxRow{
-flex-wrap:wrap;
-}
-.container{
-max-width:700px;
-margin:auto;
 }

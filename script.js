@@ -196,7 +196,7 @@ ${url}
 ・共通意見
 ・注目ポスト
 ・要約
-
+`
 let grokURL = "https://x.com/i/grok?text=" + encodeURIComponent(prompt)
 
 window.open(grokURL)

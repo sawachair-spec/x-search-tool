@@ -5,10 +5,12 @@ margin:0;
 }
 
 .container{
-max-width:700px;
-margin:auto;
-padding:40px 20px;
+max-width:600px;
+width:90%;
+margin:60px auto;
+padding:30px;
 background:white;
+border-radius:10px;
 }
 
 .grid{
@@ -91,11 +93,10 @@ cursor:pointer;
 font-size:12px;
 }
 
-.topBar{
-position:fixed;
-top:10px;
-right:10px;
-z-index:1000;
+..topBar{
+display:flex;
+justify-content:flex-end;
+margin-bottom:10px;
 }
 
 #darkToggle{
@@ -106,6 +107,7 @@ font-size:18px;
 background:#1d9bf0;
 color:white;
 border:none;
+cursor:pointer;
 }
 
 .dark{

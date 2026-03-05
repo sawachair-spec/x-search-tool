@@ -129,6 +129,20 @@ ul.appendChild(li)
 
 }
 
+function analyzeGPT(){
+
+let query = buildQuery()
+
+let url = "https://x.com/search?q=" + encodeURIComponent(query)
+
+let prompt = `次のX検索結果を分析してください\n${url}`
+
+let gpt = "https://chat.openai.com/?q=" + encodeURIComponent(prompt)
+
+window.open(gpt)
+
+}
+
 function deleteHistory(index){
 
 let history=JSON.parse(localStorage.getItem("history")||"[]")

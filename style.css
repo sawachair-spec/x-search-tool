@@ -1,12 +1,14 @@
 body{
 font-family:system-ui;
 background:#f7f9f9;
+margin:0;
 }
 
 .container{
 max-width:900px;
 margin:auto;
 padding:30px;
+background:white;
 }
 
 .grid{
@@ -38,4 +40,33 @@ color:white;
 border:none;
 padding:10px 15px;
 border-radius:20px;
+margin:5px;
+cursor:pointer;
+}
+
+#queryBox{
+padding:15px;
+background:#f0f0f0;
+margin-top:10px;
+border-radius:5px;
+word-break:break-all;
+}
+
+.dark{
+background:#121212;
+color:white;
+}
+
+.dark .container{
+background:#1e1e1e;
+}
+
+.dark input{
+background:#333;
+color:white;
+border:1px solid #555;
+}
+
+.dark #queryBox{
+background:#333;
 }

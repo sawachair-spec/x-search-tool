@@ -30,6 +30,8 @@ let until=document.getElementById("until").value
 if(since) query+=` since:${since}`  
 if(until) query+=` until:${until}`  
   
+document.getElementById("queryBox").innerText=query
+  
 return query  
 }  
   

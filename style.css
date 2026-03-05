@@ -143,3 +143,73 @@ margin-top:20px;
 flex:1;
 min-width:120px;
 }
+
+/* 入力幅修正 */
+
+input{
+width:100%;
+box-sizing:border-box;
+}
+
+
+/* チェックボックス */
+
+.checkboxRow{
+display:flex;
+flex-wrap:wrap;
+gap:15px;
+margin-top:10px;
+}
+
+.checkboxRow label{
+display:flex;
+align-items:center;
+gap:6px;
+font-size:14px;
+}
+
+
+/* ボタンレイアウト */
+
+.buttons{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+margin-top:20px;
+}
+
+.buttons button{
+flex:1;
+min-width:120px;
+}
+
+
+/* スマホ対応 */
+
+@media (max-width:768px){
+
+.grid{
+grid-template-columns:1fr;
+}
+
+.container{
+padding:15px;
+}
+
+input{
+font-size:16px;
+}
+
+.buttons{
+flex-direction:column;
+}
+
+.buttons button{
+width:100%;
+}
+
+#history li{
+display:block;
+}
+
+}

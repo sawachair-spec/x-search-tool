@@ -163,3 +163,23 @@ localStorage.removeItem("history")
 renderHistory()
 
 }
+function setupRealtime(){
+
+let inputs = document.querySelectorAll("input")
+
+inputs.forEach(input => {
+input.addEventListener("input", buildQuery)
+})
+
+}
+function setupRealtime(){
+
+let inputs = document.querySelectorAll("input")
+
+inputs.forEach(input => {
+input.addEventListener("input", buildQuery)
+})
+
+}
+
+setupRealtime()

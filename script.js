@@ -32,17 +32,10 @@ let until=document.getElementById("until").value
 if(since) query+=` since:${since}`
 if(until) query+=` until:${until}`
 
-if(document.getElementById("image").checked)
-query+=" filter:images"
-
-if(document.getElementById("video").checked)
-query+=" filter:videos"
-
-if(document.getElementById("link").checked)
-query+=" filter:links"
-
-if(document.getElementById("noRT").checked)
-query+=" -filter:retweets"
+if(document.getElementById("image").checked) query+=" filter:images"
+if(document.getElementById("video").checked) query+=" filter:videos"
+if(document.getElementById("link").checked) query+=" filter:links"
+if(document.getElementById("noRT").checked) query+=" -filter:retweets"
 
 document.getElementById("queryBox").innerText=query
 
@@ -58,7 +51,6 @@ let url="https://x.com/search?q="+encodeURIComponent(query)+"&f=live"
 saveHistory(url)
 
 window.open(url)
-
 }
 
 function copyQuery(){
@@ -68,7 +60,6 @@ let query=buildQuery()
 navigator.clipboard.writeText(query)
 
 alert("コピーしました")
-
 }
 
 function downloadQuery(){
@@ -86,7 +77,6 @@ a.href=URL.createObjectURL(blob)
 a.download="x-search.txt"
 
 a.click()
-
 }
 
 function analyzeGPT(){
@@ -100,12 +90,19 @@ let prompt=`次のX検索結果を分析してください\n${url}`
 let gpt="https://chat.openai.com/?q="+encodeURIComponent(prompt)
 
 window.open(gpt)
-
 }
 
 function toggleDark(){
 
 document.body.classList.toggle("dark")
+
+let btn=document.getElementById("darkToggle")
+
+if(document.body.classList.contains("dark")){
+btn.innerText="☀"
+}else{
+btn.innerText="🌙"
+}
 
 }
 
@@ -118,7 +115,6 @@ history.unshift(url)
 localStorage.setItem("history",JSON.stringify(history))
 
 renderHistory()
-
 }
 
 function renderHistory(){
@@ -142,8 +138,6 @@ ul.appendChild(li)
 
 }
 
-renderHistory()
-
 function deleteHistory(index){
 
 let history=JSON.parse(localStorage.getItem("history")||"[]")
@@ -153,7 +147,6 @@ history.splice(index,1)
 localStorage.setItem("history",JSON.stringify(history))
 
 renderHistory()
-
 }
 
 function clearHistory(){
@@ -161,25 +154,22 @@ function clearHistory(){
 localStorage.removeItem("history")
 
 renderHistory()
-
 }
+
 function setupRealtime(){
 
-let inputs = document.querySelectorAll("input")
+let inputs=document.querySelectorAll("input")
 
-inputs.forEach(input => {
-input.addEventListener("input", buildQuery)
-})
+inputs.forEach(input=>{
 
-}
-function setupRealtime(){
+input.addEventListener("input",buildQuery)
 
-let inputs = document.querySelectorAll("input")
+input.addEventListener("change",buildQuery)
 
-inputs.forEach(input => {
-input.addEventListener("input", buildQuery)
 })
 
 }
 
 setupRealtime()
+
+renderHistory()

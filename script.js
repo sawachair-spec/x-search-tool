@@ -129,11 +129,12 @@ let ul=document.getElementById("history")
 
 ul.innerHTML=""
 
-history.slice(0,10).forEach(h=>{
+history.slice(0,10).forEach((h,index)=>{
 
 let li=document.createElement("li")
 
-li.innerHTML=`<a href="${h}" target="_blank">${h}</a>`
+li.innerHTML=`<a href="${h}" target="_blank">${h}</a>
+<button class="deleteBtn" onclick="deleteHistory(${index})">削除</button>`
 
 ul.appendChild(li)
 
@@ -142,3 +143,23 @@ ul.appendChild(li)
 }
 
 renderHistory()
+
+function deleteHistory(index){
+
+let history=JSON.parse(localStorage.getItem("history")||"[]")
+
+history.splice(index,1)
+
+localStorage.setItem("history",JSON.stringify(history))
+
+renderHistory()
+
+}
+
+function clearHistory(){
+
+localStorage.removeItem("history")
+
+renderHistory()
+
+}

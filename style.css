@@ -5,9 +5,9 @@ margin:0;
 }
 
 .container{
-max-width:600px;
 width:90%;
-margin:60px auto;
+max-width:400px;
+margin:40px auto;
 padding:30px;
 background:white;
 border-radius:10px;
@@ -29,9 +29,9 @@ font-size:14px;
 
 input{
 width:100%;
+max-width:100%;
 box-sizing:border-box;
 padding:10px;
-border:1px solid #ccc;
 border-radius:6px;
 }
 
@@ -93,7 +93,7 @@ cursor:pointer;
 font-size:12px;
 }
 
-..topBar{
+.topBar{
 display:flex;
 justify-content:flex-end;
 margin-bottom:10px;

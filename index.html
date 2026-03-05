@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
 
 <meta charset="UTF-8">
@@ -19,12 +20,86 @@
 
 <h1>X検索ツール</h1>
 
-<button onclick="toggleDark()">🌙</button>
+<button onclick="toggleDark()" id="darkBtn">🌙</button>
 
 </div>
 
-<label>キーワード</label>
+
+<div class="grid">
+
+<h3>キーワード</h3>
+
+<label>すべての単語</label>
 <input id="keyword">
+
+<label>完全一致</label>
+<input id="exact">
+
+<label>OR検索</label>
+<input id="or">
+
+<label>除外</label>
+<input id="exclude">
+
+
+<h3>ユーザー</h3>
+
+<label>ID</label>
+<input id="user">
+
+<label>ハッシュタグ</label>
+<input id="hashtag">
+
+
+<h3>期間</h3>
+
+<label>開始</label>
+<input type="date" id="since">
+
+<label>終了</label>
+<input type="date" id="until">
+
+
+<h3>エンゲージメント</h3>
+
+<label>いいね</label>
+<input type="number" id="like">
+
+<label>RP</label>
+<input type="number" id="rt">
+
+<label>リプ</label>
+<input type="number" id="reply">
+
+
+<h3>コンテンツ</h3>
+
+<div class="checkboxRow">
+
+<label class="checkboxItem">
+<input type="checkbox" id="image">
+<span>画像</span>
+</label>
+
+<label class="checkboxItem">
+<input type="checkbox" id="video">
+<span>動画</span>
+</label>
+
+<label class="checkboxItem">
+<input type="checkbox" id="link">
+<span>リンク</span>
+</label>
+
+<label class="checkboxItem">
+<input type="checkbox" id="noRT">
+<span>RP除外</span>
+</label>
+
+</div>
+
+</div>
+
 
 <div class="buttons">
 
@@ -32,13 +107,25 @@
 
 <button onclick="copyQuery()">コピー</button>
 
+<button onclick="downloadQuery()">URL保存</button>
+
 <button onclick="analyzeGPT()">ChatGPT分析</button>
 
 <button onclick="analyzeGrok()">Grok分析</button>
 
 </div>
 
+
+<h2>生成された検索クエリ</h2>
+
 <div id="queryBox"></div>
+
+
+<h2>検索履歴</h2>
+
+<button onclick="clearHistory()">履歴削除</button>
+
+<ul id="history"></ul>
 
 </div>
 

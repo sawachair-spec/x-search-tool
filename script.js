@@ -129,6 +129,43 @@ ul.appendChild(li)
 
 }
 
+
+function deleteHistory(index){
+
+let history=JSON.parse(localStorage.getItem("history")||"[]")
+
+history.splice(index,1)
+
+localStorage.setItem("history",JSON.stringify(history))
+
+renderHistory()
+
+}
+
+function clearHistory(){
+
+localStorage.removeItem("history")
+
+renderHistory()
+
+}
+
+function setupRealtime(){
+
+let inputs=document.querySelectorAll("input")
+
+inputs.forEach(input=>{
+input.addEventListener("input",buildQuery)
+input.addEventListener("change",buildQuery)
+})
+
+}
+
+setupRealtime()
+
+renderHistory()
+
+
 function analyzeGPT(){
 
 let query = buildQuery()
@@ -166,37 +203,3 @@ window.open(grokURL)
 
 }
 
-function deleteHistory(index){
-
-let history=JSON.parse(localStorage.getItem("history")||"[]")
-
-history.splice(index,1)
-
-localStorage.setItem("history",JSON.stringify(history))
-
-renderHistory()
-
-}
-
-function clearHistory(){
-
-localStorage.removeItem("history")
-
-renderHistory()
-
-}
-
-function setupRealtime(){
-
-let inputs=document.querySelectorAll("input")
-
-inputs.forEach(input=>{
-input.addEventListener("input",buildQuery)
-input.addEventListener("change",buildQuery)
-})
-
-}
-
-setupRealtime()
-
-renderHistory()

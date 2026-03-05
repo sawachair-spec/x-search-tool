@@ -143,6 +143,29 @@ window.open(gpt)
 
 }
 
+function analyzeGrok(){
+
+let query = buildQuery()
+
+let url = "https://x.com/search?q=" + encodeURIComponent(query)
+
+let prompt = `
+次のX検索結果を分析してください
+
+${url}
+
+以下を教えてください
+・トレンド
+・共通意見
+・注目ポスト
+・要約
+
+let grokURL = "https://x.com/i/grok?text=" + encodeURIComponent(prompt)
+
+window.open(grokURL)
+
+}
+
 function deleteHistory(index){
 
 let history=JSON.parse(localStorage.getItem("history")||"[]")

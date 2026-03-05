@@ -1,3 +1,15 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>X検索ツール</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
 <h1>X検索ツール</h1>
 
 <div class="grid">
@@ -20,7 +32,6 @@
 
 </div>
 
-
 <div>
 
 <h3>ユーザー</h3>
@@ -33,7 +44,6 @@
 
 </div>
 
-
 <div>
 
 <h3>期間</h3>
@@ -45,7 +55,6 @@
 <input type="date" id="until">
 
 </div>
-
 
 <div>
 
@@ -62,19 +71,40 @@
 
 </div>
 
-
 <div>
 
 <h3>コンテンツ</h3>
 
-<label><input type="checkbox" id="image">画像</label>
-
-<label><input type="checkbox" id="video">動画</label>
-
-<label><input type="checkbox" id="link">リンク</label>
-
-<label><input type="checkbox" id="noRT">リツイート除外</label>
+<label><input type="checkbox" id="image"> 画像</label>
+<label><input type="checkbox" id="video"> 動画</label>
+<label><input type="checkbox" id="link"> リンク</label>
+<label><input type="checkbox" id="noRT"> リツイート除外</label>
 
 </div>
 
 </div>
+
+<div class="buttons">
+
+<button onclick="searchX()">X検索</button>
+<button onclick="copyQuery()">コピー</button>
+<button onclick="downloadQuery()">URL保存</button>
+<button onclick="analyzeGPT()">ChatGPT分析</button>
+<button onclick="toggleDark()">ダークモード</button>
+
+</div>
+
+<h2>生成された検索クエリ</h2>
+
+<div id="queryBox"></div>
+
+<h2>検索履歴</h2>
+
+<ul id="history"></ul>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

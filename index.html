@@ -2,20 +2,22 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>X検索ツール</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+<div class="topBar">
+<button id="darkToggle" onclick="toggleDark()">🌙</button>
+</div>
+
 <div class="container">
 
 <h1>X検索ツール</h1>
 
 <div class="grid">
-
-<div>
 
 <h3>キーワード</h3>
 
@@ -31,10 +33,6 @@
 <label>除外</label>
 <input id="exclude">
 
-</div>
-
-<div>
-
 <h3>ユーザー</h3>
 
 <label>投稿者</label>
@@ -43,10 +41,6 @@
 <label>ハッシュタグ</label>
 <input id="hashtag">
 
-</div>
-
-<div>
-
 <h3>期間</h3>
 
 <label>開始</label>
@@ -54,10 +48,6 @@
 
 <label>終了</label>
 <input type="date" id="until">
-
-</div>
-
-<div>
 
 <h3>エンゲージメント</h3>
 
@@ -69,10 +59,6 @@
 
 <label>リプ</label>
 <input type="number" id="replyCount">
-
-</div>
-
-<div>
 
 <h3>コンテンツ</h3>
 
@@ -108,7 +94,6 @@
 <button onclick="copyQuery()">コピー</button>
 <button onclick="downloadQuery()">URL保存</button>
 <button onclick="analyzeGPT()">ChatGPT分析</button>
-<button onclick="toggleDark()">ダークモード</button>
 
 </div>
 
@@ -117,7 +102,9 @@
 <div id="queryBox"></div>
 
 <h2>検索履歴</h2>
-<button onclick="clearHistory()">履歴をすべて削除</button>
+
+<button onclick="clearHistory()">履歴削除</button>
+
 <ul id="history"></ul>
 
 </div>

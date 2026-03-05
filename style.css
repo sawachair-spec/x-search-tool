@@ -5,22 +5,37 @@ margin:0;
 }
 
 .container{
+max-width:620px;
 width:90%;
-max-width:400px;
 margin:40px auto;
 padding:30px;
 background:white;
-border-radius:10px;
+border-radius:12px;
+box-sizing:border-box;
+}
+
+.titleBar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:25px;
+}
+
+#darkToggle{
+width:40px;
+height:40px;
+border-radius:50%;
+border:none;
+background:#1d9bf0;
+color:white;
+font-size:18px;
+cursor:pointer;
 }
 
 .grid{
 display:flex;
 flex-direction:column;
-gap:15px;
-}
-
-h3{
-margin-top:25px;
+gap:10px;
 }
 
 label{
@@ -29,10 +44,10 @@ font-size:14px;
 
 input{
 width:100%;
-max-width:100%;
-box-sizing:border-box;
 padding:10px;
 border-radius:6px;
+border:1px solid #ccc;
+box-sizing:border-box;
 }
 
 .buttons{
@@ -49,14 +64,6 @@ border:none;
 padding:10px;
 border-radius:20px;
 cursor:pointer;
-}
-
-#queryBox{
-padding:15px;
-background:#f0f0f0;
-border-radius:5px;
-margin-top:10px;
-word-break:break-all;
 }
 
 .checkboxRow{
@@ -77,9 +84,12 @@ font-size:13px;
 margin-bottom:5px;
 }
 
-#history a{
-color:#1d9bf0;
-text-decoration:none;
+#queryBox{
+padding:15px;
+background:#f0f0f0;
+border-radius:6px;
+margin-top:10px;
+word-break:break-all;
 }
 
 .deleteBtn{
@@ -91,23 +101,6 @@ padding:3px 8px;
 border-radius:5px;
 cursor:pointer;
 font-size:12px;
-}
-
-.topBar{
-position:fixed;
-top:10px;
-right:10px;
-z-index:1000;
-}
-
-#darkToggle{
-width:40px;
-height:40px;
-border-radius:50%;
-font-size:18px;
-background:#1d9bf0;
-color:white;
-border:none;
 }
 
 .dark{
@@ -128,27 +121,3 @@ border:1px solid #555;
 .dark #queryBox{
 background:#333;
 }
-
-.dark #history a{
-color:white;
-}
-
-.titleBar{
-display:flex;
-align-items:center;
-justify-content:space-between;
-margin-bottom:20px;
-}
-
-#darkToggle{
-width:40px;
-height:40px;
-border-radius:50%;
-border:none;
-background:#1d9bf0;
-color:white;
-font-size:18px;
-cursor:pointer;
-}
-
-

@@ -51,6 +51,7 @@ let url="https://x.com/search?q="+encodeURIComponent(query)+"&f=live"
 saveHistory(url)
 
 window.open(url)
+
 }
 
 function copyQuery(){
@@ -60,6 +61,7 @@ let query=buildQuery()
 navigator.clipboard.writeText(query)
 
 alert("コピーしました")
+
 }
 
 function downloadQuery(){
@@ -77,19 +79,7 @@ a.href=URL.createObjectURL(blob)
 a.download="x-search.txt"
 
 a.click()
-}
 
-function analyzeGPT(){
-
-let query=buildQuery()
-
-let url="https://x.com/search?q="+encodeURIComponent(query)
-
-let prompt=`次のX検索結果を分析してください\n${url}`
-
-let gpt="https://chat.openai.com/?q="+encodeURIComponent(prompt)
-
-window.open(gpt)
 }
 
 function toggleDark(){
@@ -115,6 +105,7 @@ history.unshift(url)
 localStorage.setItem("history",JSON.stringify(history))
 
 renderHistory()
+
 }
 
 function renderHistory(){
@@ -147,6 +138,7 @@ history.splice(index,1)
 localStorage.setItem("history",JSON.stringify(history))
 
 renderHistory()
+
 }
 
 function clearHistory(){
@@ -154,6 +146,7 @@ function clearHistory(){
 localStorage.removeItem("history")
 
 renderHistory()
+
 }
 
 function setupRealtime(){
@@ -161,11 +154,8 @@ function setupRealtime(){
 let inputs=document.querySelectorAll("input")
 
 inputs.forEach(input=>{
-
 input.addEventListener("input",buildQuery)
-
 input.addEventListener("change",buildQuery)
-
 })
 
 }

@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <title>X検索ツール</title>
+
 <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
@@ -12,9 +16,13 @@
 <div class="container">
 
 <div class="titleBar">
+
 <h1>X検索ツール</h1>
+
 <button id="darkToggle" onclick="toggleDark()">🌙</button>
+
 </div>
+
 
 <div class="grid">
 
@@ -32,6 +40,7 @@
 <label>除外</label>
 <input id="exclude">
 
+
 <h3>ユーザー</h3>
 
 <label>ID</label>
@@ -40,6 +49,7 @@
 <label>ハッシュタグ</label>
 <input id="hashtag">
 
+
 <h3>期間</h3>
 
 <label>開始</label>
@@ -47,6 +57,7 @@
 
 <label>終了</label>
 <input type="date" id="until">
+
 
 <h3>エンゲージメント</h3>
 
@@ -58,6 +69,7 @@
 
 <label>リプ</label>
 <input type="number" id="replyCount">
+
 
 <h3>コンテンツ</h3>
 
@@ -87,18 +99,26 @@
 
 </div>
 
+
 <div class="buttons">
 
 <button onclick="searchX()">X検索</button>
+
 <button onclick="copyQuery()">コピー</button>
+
 <button onclick="downloadQuery()">URL保存</button>
+
 <button onclick="analyzeGPT()">ChatGPT分析</button>
+
 <button onclick="analyzeGrok()">Grok分析</button>
 
 </div>
-  
+
+
 <h2>生成された検索クエリ</h2>
+
 <div id="queryBox"></div>
+
 
 <h2>検索履歴</h2>
 
@@ -107,6 +127,7 @@
 <ul id="history"></ul>
 
 </div>
+
 
 <script src="script.js"></script>
 

@@ -92,13 +92,25 @@ a.click()
 
 function analyzeGPT(){
 
-let q=buildQuery()
+let q = buildQuery()
 
-let url="https://x.com/search?q="+encodeURIComponent(q)
+let url = "https://x.com/search?q=" + encodeURIComponent(q)
 
-let prompt="次のX検索結果を分析してください\n"+url
+let prompt = `
+次のX検索結果を分析してください。
 
-let gpt="https://chat.openai.com/?q="+encodeURIComponent(prompt)
+分析内容
+・現在のトレンド
+・賛成意見
+・反対意見
+・注目ポストの特徴
+・全体の要約
+
+検索URL
+${url}
+`
+
+let gpt = "https://chat.openai.com/?q=" + encodeURIComponent(prompt)
 
 window.open(gpt)
 
@@ -108,18 +120,28 @@ window.open(gpt)
 
 function analyzeGrok(){
 
-let q=buildQuery()
+let q = buildQuery()
 
-let url="https://x.com/search?q="+encodeURIComponent(q)
+let url = "https://x.com/search?q=" + encodeURIComponent(q)
 
-let prompt="このX検索結果を分析してください\n"+url
+let prompt = `
+このX検索結果を分析してください。
 
-let grok="https://x.com/i/grok?text="+encodeURIComponent(prompt)
+分析してほしい内容
+・トレンド
+・意見の傾向
+・注目投稿
+・要約
+
+検索URL
+${url}
+`
+
+let grok = "https://x.com/i/grok?text=" + encodeURIComponent(prompt)
 
 window.open(grok)
 
 }
-
 
 
 function toggleDark(){

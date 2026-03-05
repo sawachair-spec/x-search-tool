@@ -213,3 +213,23 @@ display:block;
 }
 
 }
+.checkboxRow{
+display:flex;
+gap:25px;
+margin-top:10px;
+}
+
+.checkboxItem{
+display:flex;
+flex-direction:column;
+align-items:center;
+font-size:13px;
+}
+
+.checkboxItem input{
+margin-bottom:5px;
+}
+
+.checkboxRow{
+flex-wrap:wrap;
+}

@@ -19,7 +19,7 @@
 
 <h1>X検索ツール</h1>
 
-<button id="darkToggle" onclick="toggleDark()">🌙</button>
+<button id="darkToggle">🌙</button>
 
 </div>
 
@@ -102,15 +102,15 @@
 
 <div class="buttons">
 
-<button onclick="searchX()">X検索</button>
+<button id="searchBtn">X検索</button>
 
-<button onclick="copyQuery()">コピー</button>
+<button id="copyBtn">コピー</button>
 
-<button onclick="downloadQuery()">URL保存</button>
+<button id="saveBtn">URL保存</button>
 
-<button onclick="analyzeGPT()">ChatGPT分析</button>
+<button id="gptBtn">ChatGPT分析</button>
 
-<button onclick="analyzeGrok()">Grok分析</button>
+<button id="grokBtn">Grok分析</button>
 
 </div>
 
@@ -122,7 +122,7 @@
 
 <h2>検索履歴</h2>
 
-<button onclick="clearHistory()">履歴削除</button>
+<button id="clearHistory">履歴削除</button>
 
 <ul id="history"></ul>
 
